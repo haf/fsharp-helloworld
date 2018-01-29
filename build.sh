@@ -1,6 +1,5 @@
 #!/bin/bash
-
-export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.6.1-api/
+export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.6.1-api
 
 if test "$OS" = "Windows_NT"
 then
