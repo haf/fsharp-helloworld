@@ -47,10 +47,6 @@ Target "Clean" (fun _ ->
     CleanDirs [buildDir]
 )
 
-Target "InstallDotNetCLI" (fun _ ->
-    dotnetExePath <- DotNetCli.InstallDotNetSDK dotnetcliVersion
-)
-
 Target "Restore" (fun _ ->
     appReferences
     |> Seq.iter (fun p ->
@@ -72,7 +68,6 @@ Target "Build" (fun _ ->
 // --------------------------------------------------------------------------------------
 
 "Clean"
-  ==> "InstallDotNetCLI"
   ==> "Restore"
   ==> "Build"
 
